@@ -3,5 +3,5 @@
 Starter project for webpack with typescript and hot reload.
 
 # Start
-
-Run `yarn start`.
+- Install dependencies with `yarn install`.
+- Run `yarn start`.
