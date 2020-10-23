@@ -9,6 +9,7 @@ export default class CanvasLoop {
     onFinish?: () => void;
     private entities;
     private finished;
+    private started;
     private lastUpdateTime?;
     static create: (canvas: HTMLCanvasElement) => CanvasLoop | null;
     private constructor();

@@ -14,7 +14,7 @@ const randomAnimation = (canvasLoop: CanvasLoop) => {
   const { canvas, ctx } = canvasLoop;
   const animation = Rectangle.animate(ctx);
 
-  const MaxSize = 40;
+  const MaxSize = 100;
 
   const randomDuration = () => 200 + Math.floor(Math.random() * 1500);
   const randomPos = () => ({
@@ -23,8 +23,8 @@ const randomAnimation = (canvasLoop: CanvasLoop) => {
   });
 
   const randomSize = () => ({
-    width: rand(5, MaxSize),
-    height: rand(5, MaxSize),
+    width: rand(20, MaxSize),
+    height: rand(20, MaxSize),
   });
 
   let r = Math.random();

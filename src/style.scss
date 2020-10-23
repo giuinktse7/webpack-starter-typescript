@@ -1,15 +1,7 @@
 $grid-margin: 7px;
 
-@mixin content-layout {
+@mixin grid-center-layout {
   display: grid;
-
-  grid-auto-rows: min-content;
-  @media only screen and (max-width: 968px) {
-    grid-template-columns:
-      1fr
-      50ch
-      1fr;
-  }
 
   grid-template-columns:
     1fr
@@ -36,13 +28,12 @@ $grid-margin: 7px;
     "footer";
 
   > header {
-    z-index: 9999;
+    grid-area: header;
     background-color: #161616;
     color: #fe4a29;
     font-family: "Rubik", sans-serif;
     padding: 0.5rem;
     padding-left: 3rem;
-    grid-area: header;
   }
 
   > main {
@@ -50,30 +41,16 @@ $grid-margin: 7px;
   }
 
   > footer {
-    @include content-layout;
-
     grid-area: footer;
+    @include grid-center-layout;
+
+    grid-template-columns:
+      minmax(80px, 1fr)
+      4fr
+      minmax(80px, 1fr);
+
     background-color: #cfd8dc;
     min-height: 5rem;
-  }
-}
-
-.below-header-image {
-  position: relative;
-
-  > img {
-    width: 100%;
-  }
-
-  > .shadow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    top: 0;
-    left: 0;
-
-    box-shadow: inset 0px 109px 53px -54px rgba(22, 22, 22, 1);
   }
 }
 
@@ -87,7 +64,15 @@ body {
 }
 
 #main-wrapper {
-  @include content-layout;
+  @include grid-center-layout;
+
+  grid-auto-rows: min-content;
+  @media only screen and (max-width: 968px) {
+    grid-template-columns:
+      1fr
+      50ch
+      1fr;
+  }
 
   .full-bleed {
     width: 100%;
@@ -136,8 +121,19 @@ button:active {
     font-family: "Rubik", sans-serif;
     color: #232323;
   }
-  canvas {
-    width: 100%;
-    background-color: #f3f3f3;
-  }
+}
+
+.canvas-wrapper {
+  margin: 0 auto;
+}
+
+#test-canvas {
+  /*This eliminates inconsistent rendering across browsers, canvas is supposed to be a block-level element across all browsers anyway*/
+  display: block;
+
+  /*myCanvas will inherit its CSS width and style property values from .canvas-wrapper*/
+  width: 100%;
+  height: 400px;
+
+  background-color: #f3f3f3;
 }
