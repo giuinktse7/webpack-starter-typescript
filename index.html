@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <title>Webpack TS Starter</title>
-    <style></style>
-  </head>
-  <body>
-    <h1>Webpack TS Starter</h1>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
     <script type="module" src="bundle.js"></script>
+  </head>
+  <body id="page">
+    
+    <header id="page-header">
+      <h1>Webpack TS Starter</h1>
+    </header>
+
+    <main id="main-wrapper">
+      <picture class="full-bleed below-header-image">
+        <img alt="Ice map" src="images/cave.png" />
+        <div class="shadow"></div>
+      </picture>
+        <section class="canvas-area">
+          <h2>Canvas</h2>
+          <button id="animation-button">Animate</button>
+          <canvas id="test-canvas"></canvas>
+        </section>
+       
+        <h3 class="gif-header">
+          <div class="row">
+            <img alt="animated book monster" src="images/flying_book.gif" />
+            <img alt="animated book monster" src="images/flying_book.gif" />
+          </div>
+          
+          <p>Flying Books</p>
+          <div class="row">
+            <img alt="animated book monster" src="images/flying_book.gif" />
+            <img alt="animated book monster" src="images/flying_book.gif" />
+          </div>
+        </h3> 
+    </main>
+    <footer><p>HTML + Typescript Template</p></footer>
   </body>
 </html>
